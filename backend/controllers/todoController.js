@@ -48,7 +48,7 @@ exports.deleteTodo = async (req, res, next) => {
             return res.status(404).json({error: "todo is not found"})
         }
         await todo.destroy();
-        res.status(204);
+        res.status(204).send();
     }catch(err){
         next(err);
     }
